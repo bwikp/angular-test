@@ -1,0 +1,22 @@
+<section class="formApp">
+    <form  [formGroup]="housingForm" (submit)="submitHouseValues()">
+        <label>
+            buyingPrice:
+            <input type="text" type="number" formControlName="buyingPrice">
+        </label>
+        <label>
+             monthlyRent:
+            <input type="text" type="number" formControlName="monthlyRent">
+        </label>
+        <label>
+            annualCharges:
+            <input type="text" type="number" formControlName="annualCharges">
+        </label>
+        <label>
+            AgencyFees:
+            <input type="text" type="number" formControlName="agencyFees">
+        </label>
+        <button type="submit">Cal</button>
+    </form>
+    <h2>{{total}}</h2>
+</section>
