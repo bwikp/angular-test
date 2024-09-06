@@ -13,6 +13,6 @@ export class HousingService {
      }
 
   getTotalRent(monthlyRent:any,agencyFees:any) {
-     return   monthlyRent * agencyFees
+     return   monthlyRent * parseFloat(`1.${agencyFees}`)
   }
 }
