@@ -8,6 +8,8 @@
 .app,body,html,.mainApp{
     height: 100%;
     width: 100%;
+    background:  #121212;
+    color: aliceblue;
 }
 
 

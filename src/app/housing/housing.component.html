@@ -1,28 +1,30 @@
 <section class="formApp">
-    <form  [formGroup]="housingForm" (submit)="submitHouseValues()">
-        <label>
-            buyingPrice:
-            <input type="text" type="number" formControlName="buyingPrice">
-        </label>
-        <label>
-             monthlyRent:
-            <input type="text" type="number" formControlName="monthlyRent">
-        </label>
-        <label>
-            annualCharges:
-            <input type="text" type="number" formControlName="annualCharges">
-        </label>
-        <label>
-            AgencyFees:
-            <input type="text" type="number" formControlName="agencyFees">
-        </label>
-        <button type="submit">Cal</button>
-    </form>
-    <h2>total rent month :  {{totalRentMonth}}</h2>
-    <h2>Agencyfee per month: {{ agencyfee}}</h2>
-    <h2> total fee after 3 year : {{ totalfee3year }}</h2>
-    <h2> total rent after 3 year : {{ totalrent3year }}</h2>
-    <h2>total année 1: {{totalyear1}} </h2>
-    <h2>total année 2: {{totalyear2}}</h2>
-    <h2>total année 3: {{totalyear3}}</h2>
+  <form
+    class="formInput"
+    [formGroup]="housingForm"
+    (submit)="submitHouseValues()"
+  >
+    <label>buyingPrice € </label>
+    <input type="text" type="number" formControlName="buyingPrice" placeholder="buyingPrice" />
+
+    <label>monthlyRent € </label>
+
+    <input type="text" type="number" formControlName="monthlyRent" placeholder="monthlyRent"/>
+
+    <label> annualCharges € </label>
+    <input type="text" type="number" formControlName="annualCharges" placeholder="annualCharges"/>
+
+    <label> AgencyFees %</label>
+    <input type="text" type="number" formControlName="agencyFees"  placeholder="Agency fee"/>
+    <button type="submit">Cal</button>
+  </form>
+  <div class="formValue">
+    <h2>total rent month : {{ totalRentMonth }}</h2>
+    <h2>Agencyfee per month: {{ agencyfee }}</h2>
+    <h2>total fee after 3 year : {{ totalfee3year }}</h2>
+    <h2>total rent after 3 year : {{ totalrent3year }}</h2>
+    <h2>year 1 earning: {{ totalyear1 }}</h2>
+    <h2>year 2 earning: {{ totalyear2 }}</h2>
+    <h2>year 3 earning: {{ totalyear3 }}</h2>
+  </div>
 </section>
