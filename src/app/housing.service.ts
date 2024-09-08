@@ -1,4 +1,4 @@
-import { G } from '@angular/cdk/keycodes';
+import { G, Y } from '@angular/cdk/keycodes';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -16,13 +16,13 @@ export class HousingService {
   getTotalRentMonth(monthlyRent:any,agencyFee:any) {
     agencyFee =  agencyFee.replace(/\D/g,'')
     monthlyRent = monthlyRent.replace(/\D/g,'')
-     return   monthlyRent * parseFloat(`1.${agencyFee}`)
+     return   Number((monthlyRent * parseFloat(`1.${agencyFee}`)).toFixed(2))
   }
 
   getAgencyFee(monthlyRent:any,agencyFee:any){
     agencyFee =  agencyFee.replace(/\D/g,'')
     monthlyRent = monthlyRent.replace(/\D/g,'')
-    return monthlyRent * parseFloat(`0.${agencyFee}`)
+    return Number((monthlyRent * parseFloat(`0.${agencyFee}`)).toFixed(2))
   }
   get3yearFeeTotal(monthlyRent:any,agencyfee:any){
     agencyfee =  agencyfee.replace(/\D/g,'')
@@ -43,7 +43,7 @@ export class HousingService {
             i++
           } while ( i < 36 )
         
-        return totalFee 
+        return Number(totalFee.toFixed(2))
   }
   get3yearRentTotal(monthlyRent:any,agencyfee:any){
     agencyfee =  agencyfee.replace(/\D/g,'')
@@ -65,7 +65,7 @@ export class HousingService {
             i++
           } while ( i < 36 )
         
-        return totalFee 
+        return Number(totalFee.toFixed(2))
   }
 
   getYearTotal(monthlyRent:any,agencyfee:any,year:any) {
@@ -81,14 +81,14 @@ export class HousingService {
           totalFee += monthlyRent * parseFloat(`1.${agencyfee}`)
           i++
         } while (i < 12 )
-          return totalFee
+          return Number(totalFee.toFixed(2))
       }
       if ( year == 2){
         do {
           totalFee += monthlyRent * parseFloat(`1.${agencyfee - 5}`)
           j++
         } while (j < 12 )
-          return totalFee
+          return Number(totalFee.toFixed(2))
 
       }
 
@@ -97,7 +97,7 @@ export class HousingService {
           totalFee += monthlyRent * parseFloat(`1.${agencyfee - 10}`)
           k++
         } while (k < 12 )
-          return totalFee
+          return Number(totalFee.toFixed(2))
       }
       else {
         return 0
@@ -114,11 +114,18 @@ export class HousingService {
 
     return parseFloat(( annualCharges.replace(/\s/g, '') / 12 ).toFixed(2)) 
   }
-  getTotalSpent(buildingPrice:any,annualCharges:any){
+  getTotalSpent(buildingPrice:any,annualCharges:any,year:any){
      annualCharges = annualCharges.replace(/\s/g, '')
      buildingPrice =  buildingPrice.replace(/\s/g, '')
      console.log( Number(annualCharges) + Number(buildingPrice))
-    return  Number(annualCharges) + Number(buildingPrice)
+    return  Number((annualCharges * year).toFixed(2))
 
+  }
+  getYield(buildingPrice:any,annualCharges:any,monthlyRent:any,year:any,agencyFee:any){
+    buildingPrice = buildingPrice.replace(/\s/g, '')
+    annualCharges = annualCharges.replace(/\s/g, '')
+    monthlyRent = monthlyRent.replace(/\s/g,'')
+     let  totalYear = this.getYearTotal(monthlyRent,agencyFee,year)
+     return Number(( (totalYear - annualCharges)/ (buildingPrice)* 100 ).toFixed(2))
   }
 }

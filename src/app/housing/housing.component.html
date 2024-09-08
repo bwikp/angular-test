@@ -48,16 +48,16 @@
         <p>building Price : {{ buildingPrice }} €  </p>
         <p>annual Charges : {{ AnnualCharge }} €  </p>
         <p> divided monthly : {{ MontlyCharge }} € </p>
-        <p>total spent year 1: {{ totalSpent }} € </p>
-        <p>total spent year 2: {{ AnnualCharge }} € </p>
-        <p>total spent year 3: {{ AnnualCharge }} € </p>
+        <p>total spent after year 1: {{ totalSpentY1 + buildingPrice }} € </p>
+        <p>total spent after year 2: {{ totalSpentY2 + buildingPrice }} € </p>
+        <p>total spent after year 3: {{ totalSpentY3 + buildingPrice }} € </p>
       </div>
     </div>
     <div class="resConclusion">
       <h2>Yield of return</h2>
-        <P>year 1 :</P>
-        <P>year 2 :</P>
-        <P>year 3 :</P>
+        <P>year 1 : {{yield1}} %</P>
+        <P>year 2 : {{yield2}} % </P>
+        <P>year 3 : {{yield3}} %</P>
     </div>
   </div>
 </section>
