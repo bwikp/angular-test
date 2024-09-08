@@ -33,31 +33,40 @@
   <div class="formValue">
     <div class="res">
       <div class="resCell">
-        <h2>earning</h2>
-        <p>year 1 earning: {{ totalyear1 }} €  </p>
-        <p>year 2 earning: {{ totalyear2 }} € </p>
-        <p>year 3 earning: {{ totalyear3 }} € </p>
-        <p>per month year 1: {{ rentYear1 }} €  </p>
-        <p>per month year 2: {{ rentYear2 }} € </p>
-        <p>per month year 3: {{ rentYear3 }} € </p>
-        <p>total fee after 3 year : {{ totalfee3year }} €  </p>
-        <p>total rent after 3 year : {{ totalrent3year }} € </p>
+        <h3>Earning</h3>
+        <p>year 1 earning: {{ totalyear1 }} €</p>
+        <p>year 2 earning: {{ totalyear2 }} €</p>
+        <p>year 3 earning: {{ totalyear3 }} €</p>
+        <p>per month year 1: {{ rentYear1 }} €</p>
+        <p>per month year 2: {{ rentYear2  }} €</p>
+        <p>per month year 3: {{ rentYear3 }} €</p>
+        <p>total fee after 3 year : {{ totalfee3year }} €</p>
+        <p>total rent after 3 year : {{ totalrent3year }} €</p>
       </div>
       <div class="resCell">
-        <h2>Spending</h2>
-        <p>building Price : {{ buildingPrice }} €  </p>
-        <p>annual Charges : {{ AnnualCharge }} €  </p>
-        <p> divided monthly : {{ MontlyCharge }} € </p>
-        <p>total spent after year 1: {{ totalSpentY1 + buildingPrice }} € </p>
-        <p>total spent after year 2: {{ totalSpentY2 + buildingPrice }} € </p>
-        <p>total spent after year 3: {{ totalSpentY3 + buildingPrice }} € </p>
+        <h3>Spending</h3>
+        <p>building Price : {{ buildingPrice }} €</p>
+        <p>annual Charges : {{ AnnualCharge }} €</p>
+        <p>divided monthly : {{ MontlyCharge }} €</p>
+        <p>total spent after year 1: {{ totalSpentY1 + buildingPrice }} €</p>
+        <p>total spent after year 2: {{ totalSpentY2 + buildingPrice }} €</p>
+        <p>total spent after year 3: {{ totalSpentY3 + buildingPrice }} €</p>
       </div>
     </div>
     <div class="resConclusion">
-      <h2>Yield of return</h2>
-        <P>year 1 : {{yield1}} %</P>
-        <P>year 2 : {{yield2}} % </P>
-        <P>year 3 : {{yield3}} %</P>
+      <h3 class="conclusionTitle">Yield of return</h3>
+      <section class="yieldField">
+        <div class="yieldCell">
+          <P>year 1 : {{ yield1 }} %</P>
+          <P>year 2 : {{ yield2 }} % </P>
+          <P>year 3 : {{ yield3 }} %</P>
+        </div>
+        <div class="yieldCell">
+          <p>net Income/month: {{ rentYear1 - MontlyCharge }}  € </p>
+          <p>net Income/month: {{ rentYear2 - MontlyCharge }}  €</p>
+          <p>net Income/month: {{ rentYear3 - MontlyCharge }}  €</p>
+        </div>
+      </section>
     </div>
   </div>
 </section>

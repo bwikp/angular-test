@@ -108,7 +108,7 @@ export class HousingService {
     agencyfee =  agencyfee.replace(/\D/g,'')
     monthlyRent = monthlyRent.replace(/\D/g,'')
     let month = this.getYearTotal(monthlyRent,agencyfee,year)
-    return Number(month.toFixed(2))
+    return Number((month/12).toFixed(2))
   }
   getAnnualCharge(annualCharges:any){
       return annualCharges.replace(/\D/g, '');
