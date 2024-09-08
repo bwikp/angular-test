@@ -22,7 +22,7 @@
     border: 1px #b2b2b2 solid;
     gap: 1em;
     border-radius: 10px;
-    font-size: large;
+    font-size: medium;
      }
 
 .formValue {
@@ -111,4 +111,28 @@
     padding: 3.5%;
     background:  #858585;
     font-size: medium;
+}
+
+@media (max-width:769px) {
+    .formValue{
+        font-size: small;
+        width: 70%;
+    }
+    .formInput {
+        width: 30%;
+        padding-top: 5%;
+        justify-content: start;
+    }
+    .yieldCell{
+        font-size: small;
+    }
+    .formInput{
+        font-size: small;
+    }
+    .submitButton {
+        width: 70%;
+    }
+    input{
+        height: 10%;
+    }
 }
