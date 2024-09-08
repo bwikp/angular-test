@@ -1,3 +1,4 @@
+import { G } from '@angular/cdk/keycodes';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,18 +10,23 @@ export class HousingService {
   submitHouseValues(buyingPrice:number,monthlyRent:number,annualCharges:number,agencyFees:any) {
     let totalRent = monthlyRent * agencyFees
     // console.log(buyingPrice,monthlyRent,annualCharges,agencyFees)
-    console.log(totalRent)
+    // console.log(totalRent)
      }
 
-  getTotalRentMonth(monthlyRent:any,agencyFees:any) {
-     return   monthlyRent * parseFloat(`1.${agencyFees}`)
+  getTotalRentMonth(monthlyRent:any,agencyFee:any) {
+    agencyFee =  agencyFee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
+     return   monthlyRent * parseFloat(`1.${agencyFee}`)
   }
 
-  getAgencyFee(monthlyRent:any,agencyFees:any){
-    return monthlyRent * parseFloat(`0.${agencyFees}`)
+  getAgencyFee(monthlyRent:any,agencyFee:any){
+    agencyFee =  agencyFee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
+    return monthlyRent * parseFloat(`0.${agencyFee}`)
   }
   get3yearFeeTotal(monthlyRent:any,agencyfee:any){
-
+    agencyfee =  agencyfee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
     let totalFee = 0
     let i = 0
         do {
@@ -40,7 +46,9 @@ export class HousingService {
         return totalFee 
   }
   get3yearRentTotal(monthlyRent:any,agencyfee:any){
-
+    agencyfee =  agencyfee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
+    
     let totalFee = 0
     let i = 0
         do {
@@ -60,7 +68,9 @@ export class HousingService {
         return totalFee 
   }
 
-  getYear1Total(monthlyRent:any,agencyfee:any,year:any) {
+  getYearTotal(monthlyRent:any,agencyfee:any,year:any) {
+    agencyfee =  agencyfee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
     let totalFee = 0
     let i = 0
     let j = 0
@@ -93,4 +103,22 @@ export class HousingService {
         return 0
       }
 }
+  getAnnualCharge(annualCharges:any){
+      return annualCharges.replace(/\D/g, '');
+  }
+  
+  getBuildingPrice(buildingPrice:any){
+    return parseFloat(buildingPrice.replace(/\D/g,'')) 
+  }
+  getMonthlyCharge(annualCharges:any){
+
+    return parseFloat(( annualCharges.replace(/\s/g, '') / 12 ).toFixed(2)) 
+  }
+  getTotalSpent(buildingPrice:any,annualCharges:any){
+     annualCharges = annualCharges.replace(/\s/g, '')
+     buildingPrice =  buildingPrice.replace(/\s/g, '')
+     console.log( Number(annualCharges) + Number(buildingPrice))
+    return  Number(annualCharges) + Number(buildingPrice)
+
+  }
 }

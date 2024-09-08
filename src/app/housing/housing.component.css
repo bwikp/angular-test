@@ -8,33 +8,84 @@
     width: 100%;
     height: 90%;
     background:  #262626;
-
+    gap: 2%;
 }
 
-.formInput,.formValue {
+.formInput {
     display: flex;
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 20%;
     height: 100%;
     background:  #464646;
     border: 1px #b2b2b2 solid;
     gap: 1em;
+    border-radius: 10px;
+    font-size: large;
      }
 
+.formValue {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 60%;
+    background:  #464646;
+    border: 1px #b2b2b2 solid;
+    border-radius: 10px;
+    font-size: medium;
+    height: 100%;
+    padding:2%;
+    gap: 3%;
+
+}
  input {
     text-align: left;
-    padding: 10px;
-    height: 4em;
-    width: 20%;
+    padding:3%;
+    height: 10%;
+    width: 80%;
+    border-radius: 10px;
+}
+.res {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    height: 80%;
+    width: 100%;
+    gap: 3%;
+}
+.resCell{
+  
+    height: 100%;
+    width: 45%;
+    gap: 2%;
+    align-items: start;
+    justify-content:start;
+ 
+}
+.resCell p {
+    padding-left: 2.25%;
+}
+.resConclusion{
+    height: 35%;
+    width: 100%;
+    gap: 2.75%;
+}
+.resConclusion,.resCell{
+    display: flex;
+    padding: 2.25%;
+    flex-direction: column;
+
+    background:  #727272;
+    border: 1px #b2b2b2 solid;
+    border-radius: 10px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number]{
-    -moz-appearance: textfield;
+.submitButton{
+    margin-top: 1%;
+    height: 8.0%;
+    border-radius: 10px;
+    width: 100px;
 }

@@ -5,26 +5,59 @@
     (submit)="submitHouseValues()"
   >
     <label>buyingPrice € </label>
-    <input type="text" type="number" formControlName="buyingPrice" placeholder="buyingPrice" />
+    <input
+      type="text"
+      formControlName="buyingPrice"
+      placeholder="buyingPrice"
+    />
 
     <label>monthlyRent € </label>
 
-    <input type="text" type="number" formControlName="monthlyRent" placeholder="monthlyRent"/>
+    <input
+      type="text"
+      formControlName="monthlyRent"
+      placeholder="monthlyRent"
+    />
 
     <label> annualCharges € </label>
-    <input type="text" type="number" formControlName="annualCharges" placeholder="annualCharges"/>
+    <input
+      type="text"
+      formControlName="annualCharges"
+      placeholder="annualCharges"
+    />
 
     <label> AgencyFees %</label>
-    <input type="text" type="number" formControlName="agencyFees"  placeholder="Agency fee"/>
-    <button type="submit">Cal</button>
+    <input type="text" formControlName="agencyFees" placeholder="Agency fee" />
+    <button class="submitButton" type="submit">submit</button>
   </form>
   <div class="formValue">
-    <h2>total rent month : {{ totalRentMonth }}</h2>
-    <h2>Agencyfee per month: {{ agencyfee }}</h2>
-    <h2>total fee after 3 year : {{ totalfee3year }}</h2>
-    <h2>total rent after 3 year : {{ totalrent3year }}</h2>
-    <h2>year 1 earning: {{ totalyear1 }}</h2>
-    <h2>year 2 earning: {{ totalyear2 }}</h2>
-    <h2>year 3 earning: {{ totalyear3 }}</h2>
+    <div class="res">
+      <div class="resCell">
+        <h2>earning</h2>
+        <p>year 1 earning: {{ totalyear1 }} €  </p>
+        <p>year 2 earning: {{ totalyear2 }} € </p>
+        <p>year 3 earning: {{ totalyear3 }} € </p>
+        <p>per month year 1: {{ totalyear1 / 12 }} €  </p>
+        <p>per month year 2: {{ totalyear2 / 12 }} € </p>
+        <p>per month year 3: {{ totalyear3 / 12 }} € </p>
+        <p>total fee after 3 year : {{ totalfee3year }} €  </p>
+        <p>total rent after 3 year : {{ totalrent3year }} € </p>
+      </div>
+      <div class="resCell">
+        <h2>Spending</h2>
+        <p>building Price : {{ buildingPrice }} €  </p>
+        <p>annual Charges : {{ AnnualCharge }} €  </p>
+        <p> divided monthly : {{ MontlyCharge }} € </p>
+        <p>total spent year 1: {{ totalSpent }} € </p>
+        <p>total spent year 2: {{ AnnualCharge }} € </p>
+        <p>total spent year 3: {{ AnnualCharge }} € </p>
+      </div>
+    </div>
+    <div class="resConclusion">
+      <h2>Yield of return</h2>
+        <P>year 1 :</P>
+        <P>year 2 :</P>
+        <P>year 3 :</P>
+    </div>
   </div>
 </section>
