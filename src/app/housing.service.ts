@@ -13,11 +13,11 @@ export class HousingService {
     // console.log(totalRent)
      }
 
-  getTotalRentMonth(monthlyRent:any,agencyFee:any) {
-    agencyFee =  agencyFee.replace(/\D/g,'')
-    monthlyRent = monthlyRent.replace(/\D/g,'')
-     return   Number((monthlyRent * parseFloat(`1.${agencyFee}`)).toFixed(2))
-  }
+  // getTotalRentMonth(monthlyRent:any,agencyFee:any) {
+  //   agencyFee =  agencyFee.replace(/\D/g,'')
+  //   monthlyRent = monthlyRent.replace(/\D/g,'')
+  //    return   Number((monthlyRent * parseFloat(`1.${agencyFee}`)).toFixed(2))
+  // }
 
   getAgencyFee(monthlyRent:any,agencyFee:any){
     agencyFee =  agencyFee.replace(/\D/g,'')
@@ -103,6 +103,13 @@ export class HousingService {
         return 0
       }
 }
+
+  getMonthByYear(monthlyRent:any,agencyfee:any,year:any){
+    agencyfee =  agencyfee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
+    let month = this.getYearTotal(monthlyRent,agencyfee,year)
+    return Number(month.toFixed(2))
+  }
   getAnnualCharge(annualCharges:any){
       return annualCharges.replace(/\D/g, '');
   }

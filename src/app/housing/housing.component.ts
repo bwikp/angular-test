@@ -24,7 +24,9 @@ export class HousingComponent {
   totalyear1 = 0;
   totalyear2 = 0;
   totalyear3 = 0;
-
+  rentYear1 = 0;
+  rentYear2 = 0;
+  rentYear3 = 0;
   AnnualCharge = 0;
   buildingPrice = 0;
   MontlyCharge = 0;
@@ -110,5 +112,20 @@ export class HousingComponent {
       3,
       this.housingForm.value.agencyFees
     );
+    this.rentYear1 = this.housingService.getMonthByYear(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      1
+    )
+    this.rentYear2 = this.housingService.getMonthByYear(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      2
+    )
+    this.rentYear3 = this.housingService.getMonthByYear(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      3
+    )
   }
 }
