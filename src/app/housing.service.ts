@@ -118,20 +118,21 @@ export class HousingService {
     return parseFloat(buildingPrice.replace(/\D/g,'')) 
   }
   getMonthlyCharge(annualCharges:any){
-
-    return parseFloat(( annualCharges.replace(/\s/g, '') / 12 ).toFixed(2)) 
+    
+    return parseFloat(( annualCharges.replace(/\D/g, '') / 12 ).toFixed(2)) 
   }
   getTotalSpent(buildingPrice:any,annualCharges:any,year:any){
-     annualCharges = annualCharges.replace(/\s/g, '')
-     buildingPrice =  buildingPrice.replace(/\s/g, '')
+     annualCharges = annualCharges.replace(/\D/g, '')
+     buildingPrice =  buildingPrice.replace(/\D/g, '')
      console.log( Number(annualCharges) + Number(buildingPrice))
     return  Number((annualCharges * year).toFixed(2))
 
   }
   getYield(buildingPrice:any,annualCharges:any,monthlyRent:any,year:any,agencyFee:any){
-    buildingPrice = buildingPrice.replace(/\s/g, '')
-    annualCharges = annualCharges.replace(/\s/g, '')
-    monthlyRent = monthlyRent.replace(/\s/g,'')
+    buildingPrice = buildingPrice.replace(/\D/g, '')
+    annualCharges = annualCharges.replace(/\D/g, '')
+    agencyFee = agencyFee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
      let  totalYear = this.getYearTotal(monthlyRent,agencyFee,year)
      return Number(( (totalYear - annualCharges)/ (buildingPrice)* 100 ).toFixed(2))
   }
