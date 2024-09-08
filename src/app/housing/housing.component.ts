@@ -33,7 +33,9 @@ export class HousingComponent {
   totalSpentY1 = 0;
   totalSpentY2 = 0;
   totalSpentY3 = 0;
-
+  netIncomeMonthYear1 = 0;
+  netIncomeMonthYear2 = 0; 
+  netIncomeMonthYear3 = 0;
   yield1 = 0;
   yield2 = 0;
   yield3 = 0;
@@ -126,6 +128,24 @@ export class HousingComponent {
       this.housingForm.value.monthlyRent,
       this.housingForm.value.agencyFees,
       3
+    )
+    this.netIncomeMonthYear1 = this.housingService.getNetInCome(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      1,
+      this.housingForm.value.annualCharges
+    )
+    this.netIncomeMonthYear2 = this.housingService.getNetInCome(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      2,
+      this.housingForm.value.annualCharges
+    )
+    this.netIncomeMonthYear3 = this.housingService.getNetInCome(
+      this.housingForm.value.monthlyRent,
+      this.housingForm.value.agencyFees,
+      3,
+      this.housingForm.value.annualCharges
     )
   }
 }

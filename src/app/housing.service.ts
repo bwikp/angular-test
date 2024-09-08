@@ -135,4 +135,13 @@ export class HousingService {
      let  totalYear = this.getYearTotal(monthlyRent,agencyFee,year)
      return Number(( (totalYear - annualCharges)/ (buildingPrice)* 100 ).toFixed(2))
   }
+
+  getNetInCome(monthlyRent:any,agencyfee:any,year:any,annualCharges:any){
+    agencyfee =  agencyfee.replace(/\D/g,'')
+    monthlyRent = monthlyRent.replace(/\D/g,'')
+    annualCharges = annualCharges.replace(/\D/g,'') 
+    let month = this.getMonthByYear(monthlyRent,agencyfee,year)
+    let charge = this.getMonthlyCharge(annualCharges)
+    return Number(( month - charge).toFixed(2))
+  }
 }

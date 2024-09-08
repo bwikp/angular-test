@@ -33,7 +33,8 @@
   <div class="formValue">
     <div class="res">
       <div class="resCell">
-        <h3>Earning</h3>
+        <h3 class="conclusionTitle">Earning</h3>
+        <div class="subCell">
         <p>year 1 earning: {{ totalyear1 }} €</p>
         <p>year 2 earning: {{ totalyear2 }} €</p>
         <p>year 3 earning: {{ totalyear3 }} €</p>
@@ -43,14 +44,17 @@
         <p>total fee after 3 year : {{ totalfee3year }} €</p>
         <p>total rent after 3 year : {{ totalrent3year }} €</p>
       </div>
+      </div>
       <div class="resCell">
-        <h3>Spending</h3>
+        <h3 class="">Spending</h3>
+        <div class="subCell">
         <p>building Price : {{ buildingPrice }} €</p>
         <p>annual Charges : {{ AnnualCharge }} €</p>
         <p>divided monthly : {{ MontlyCharge }} €</p>
         <p>total spent after year 1: {{ totalSpentY1 + buildingPrice }} €</p>
         <p>total spent after year 2: {{ totalSpentY2 + buildingPrice }} €</p>
         <p>total spent after year 3: {{ totalSpentY3 + buildingPrice }} €</p>
+      </div>
       </div>
     </div>
     <div class="resConclusion">
@@ -62,9 +66,9 @@
           <P>year 3 : {{ yield3 }} %</P>
         </div>
         <div class="yieldCell">
-          <p>net Income/month: {{ rentYear1 - MontlyCharge }}  € </p>
-          <p>net Income/month: {{ rentYear2 - MontlyCharge }}  €</p>
-          <p>net Income/month: {{ rentYear3 - MontlyCharge }}  €</p>
+          <p>net Income/month: {{ netIncomeMonthYear1 }}  € </p>
+          <p>net Income/month: {{ netIncomeMonthYear2 }}  €</p>
+          <p>net Income/month: {{ netIncomeMonthYear3 }}  €</p>
         </div>
       </section>
     </div>
